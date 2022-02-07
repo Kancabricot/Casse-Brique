@@ -8,6 +8,7 @@ class Tableau1 extends Phaser.Scene {
 
 
     create() {
+        let me = this;
 
         this.tailleraquette = 200
         this.tailleecran = 800
@@ -17,12 +18,14 @@ class Tableau1 extends Phaser.Scene {
         for (let i = 1; i < 6; i++) {
             for (let x = 1; x < 10; x++) {
 
-                this.brique = this.physics.add.sprite(x* 62 , y* 32, 'brick').setOrigin(0, 0)
+                this.brique = this.physics.add.sprite(x* 74 , i* 80, 'brick').setOrigin(0, 0)
                 this.brique.setDisplaySize(60, 30)
 
-                
+                // this.brique.disableBody(true,true);
             }
         }
+
+        // this.physics.add.collider(this.balle,this.brique);
 
         this.murDroite=this.physics.add.sprite(0, 0,'brick').setOrigin(0, 0);
         this.murDroite.setDisplaySize(20,this.tailleecran);
@@ -50,7 +53,7 @@ class Tableau1 extends Phaser.Scene {
         this.physics.add.collider(this.balle, this.murHaut);
         this.physics.add.collider(this.balle, this.murGauche);
         this.physics.add.collider(this.balle, this.murDroite);
-        let me = this;
+
         this.physics.add.collider(this.balle,this.joueur, function(){
             me.rebond(me.joueur);
         });
