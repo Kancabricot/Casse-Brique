@@ -50,6 +50,7 @@ class Tableau1 extends Phaser.Scene {
 
                 this.physics.add.collider(this.balle,brique, function(){
                     brique.disableBody(true,true);
+                    Score.score ++;
                     this.score += 1
                     console.log("Le score est de")
                     console.log(this.score )
@@ -69,6 +70,7 @@ class Tableau1 extends Phaser.Scene {
         this.add.text(0, 0, 'Score :', { fontFamily: 'Georgia, "Goudy Bookletter 1911", Times, serif' });
         this.add.text(50, 0, this.score, { fontFamily: 'Georgia, "Goudy Bookletter 1911", Times, serif' });
 
+        this.Vie = new Score('Jean-Mi',3);
 
         this.initKeyboard();
     }
@@ -85,7 +87,6 @@ class Tableau1 extends Phaser.Scene {
 
         this.balle.setVelocityX( this.balle.body.velocity.x + positionRelativeRaquette * hauteurRaquette)
     }
-
 
     initKeyboard() {
         let me = this;
