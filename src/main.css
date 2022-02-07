@@ -1,7 +1,7 @@
 body{
     font-family: Impact, DejaVu Sans;
     font-size: 14px;
-    background-color: #520960;
+    background-color: #000000;
     text-align: center;
     background-position:100% 50%;
 
@@ -14,11 +14,11 @@ a{
     transition: color 1s;
 }
 a:hover{
-    color: #ff0000;
+    color: #000000;
     text-decoration: underline;
 }
 a:visited{
-    color: #880000;
+    color: #ff0000;
 }
 #game{
     margin-bottom: 10px;
@@ -29,13 +29,13 @@ a:visited{
 
 }
 canvas{
-    outline: 1px solid #ff0000;
+    outline: 1px solid #000000;
 }
 #scores{
     color: #ff0000;
     font-size : 3vw;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     position: absolute;
     top: 0;
     width: 100%;
